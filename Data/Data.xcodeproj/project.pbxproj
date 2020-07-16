@@ -27,6 +27,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		500866FC24C0EB0100F4771F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		50754EEF24C034FB0072071B = {
 			isa = PBXGroup;
 			children = (
@@ -46,6 +53,7 @@
 		50754EFB24C034FB0072071B /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				500866FC24C0EB0100F4771F /* Networking */,
 				50754EFC24C034FB0072071B /* Data.h */,
 				50754EFD24C034FB0072071B /* Info.plist */,
 			);

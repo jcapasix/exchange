@@ -13,7 +13,29 @@
 		50754EBB24C0336F0072071B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50754E5F24C031040072071B /* LaunchScreen.storyboard */; };
 		50754EBC24C0336F0072071B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50754E5D24C031040072071B /* Preview Assets.xcassets */; };
 		50754EBD24C0336F0072071B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50754E5A24C031040072071B /* Assets.xcassets */; };
+		50754F0924C03A710072071B /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50754F0824C03A710072071B /* SplashView.swift */; };
+		50754F0B24C03AEE0072071B /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50754F0A24C03AEE0072071B /* SplashViewModel.swift */; };
+		50754F0D24C03AFC0072071B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50754F0C24C03AFC0072071B /* HomeView.swift */; };
+		50754F0F24C03B090072071B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50754F0E24C03B090072071B /* HomeViewModel.swift */; };
+		50754F1124C03B1E0072071B /* CoinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50754F1024C03B1E0072071B /* CoinsView.swift */; };
+		50754F1324C03B2B0072071B /* CoinsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50754F1224C03B2B0072071B /* CoinsViewModel.swift */; };
+		50754F1924C09DFA0072071B /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50754F1824C09DFA0072071B /* Domain.framework */; };
+		50754F1A24C09DFA0072071B /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50754F1824C09DFA0072071B /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		50754F1B24C09DFA0072071B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				50754F1A24C09DFA0072071B /* Domain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		50754E5424C031020072071B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +46,13 @@
 		50754E6024C031040072071B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50754EC124C0336F0072071B /* Exchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50754EC324C033AD0072071B /* presentation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = presentation.plist; sourceTree = "<group>"; };
+		50754F0824C03A710072071B /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		50754F0A24C03AEE0072071B /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		50754F0C24C03AFC0072071B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		50754F0E24C03B090072071B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		50754F1024C03B1E0072071B /* CoinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsView.swift; sourceTree = "<group>"; };
+		50754F1224C03B2B0072071B /* CoinsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsViewModel.swift; sourceTree = "<group>"; };
+		50754F1824C09DFA0072071B /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50754F1924C09DFA0072071B /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +72,7 @@
 			children = (
 				50754E5324C031020072071B /* Presentation */,
 				50754E5224C031020072071B /* Products */,
+				50754F1724C09DFA0072071B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +87,8 @@
 		50754E5324C031020072071B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				50754F1C24C0C92A0072071B /* Common */,
+				50754F0424C0390C0072071B /* Scenes */,
 				50754E5424C031020072071B /* AppDelegate.swift */,
 				50754E5624C031020072071B /* SceneDelegate.swift */,
 				50754E5824C031020072071B /* ContentView.swift */,
@@ -75,6 +108,58 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		50754F0424C0390C0072071B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				50754F0524C039200072071B /* Splash */,
+				50754F0624C0392C0072071B /* Home */,
+				50754F0724C039F20072071B /* Coins */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		50754F0524C039200072071B /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				50754F0824C03A710072071B /* SplashView.swift */,
+				50754F0A24C03AEE0072071B /* SplashViewModel.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		50754F0624C0392C0072071B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				50754F0C24C03AFC0072071B /* HomeView.swift */,
+				50754F0E24C03B090072071B /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		50754F0724C039F20072071B /* Coins */ = {
+			isa = PBXGroup;
+			children = (
+				50754F1024C03B1E0072071B /* CoinsView.swift */,
+				50754F1224C03B2B0072071B /* CoinsViewModel.swift */,
+			);
+			path = Coins;
+			sourceTree = "<group>";
+		};
+		50754F1724C09DFA0072071B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50754F1824C09DFA0072071B /* Domain.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50754F1C24C0C92A0072071B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,6 +170,7 @@
 				50754EB524C0336F0072071B /* Sources */,
 				50754EB924C0336F0072071B /* Frameworks */,
 				50754EBA24C0336F0072071B /* Resources */,
+				50754F1B24C09DFA0072071B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,7 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50754F0B24C03AEE0072071B /* SplashViewModel.swift in Sources */,
+				50754F1324C03B2B0072071B /* CoinsViewModel.swift in Sources */,
+				50754F1124C03B1E0072071B /* CoinsView.swift in Sources */,
 				50754EB624C0336F0072071B /* AppDelegate.swift in Sources */,
+				50754F0F24C03B090072071B /* HomeViewModel.swift in Sources */,
+				50754F0924C03A710072071B /* SplashView.swift in Sources */,
+				50754F0D24C03AFC0072071B /* HomeView.swift in Sources */,
 				50754EB724C0336F0072071B /* SceneDelegate.swift in Sources */,
 				50754EB824C0336F0072071B /* ContentView.swift in Sources */,
 			);

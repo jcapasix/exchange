@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		50754EE924C034E10072071B /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 50754EE724C034E10072071B /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50754F1624C09CE20072071B /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50754F1524C09CE20072071B /* Coin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		50754EE424C034E10072071B /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50754EE724C034E10072071B /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		50754EE824C034E10072071B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50754F1524C09CE20072071B /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +48,19 @@
 		50754EE624C034E10072071B /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				50754F1424C09CD30072071B /* Entities */,
 				50754EE724C034E10072071B /* Domain.h */,
 				50754EE824C034E10072071B /* Info.plist */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		50754F1424C09CD30072071B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				50754F1524C09CE20072071B /* Coin.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +106,7 @@
 				TargetAttributes = {
 					50754EE324C034E10072071B = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -131,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50754F1624C09CE20072071B /* Coin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +273,7 @@
 		50754EED24C034E10072071B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = QVC6Q8WBF8;
@@ -277,6 +291,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcapasix.Domain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -285,6 +300,7 @@
 		50754EEE24C034E10072071B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = QVC6Q8WBF8;
