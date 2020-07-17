@@ -11,7 +11,7 @@ import Domain
 
 struct SplashView: View {
     
-    private var firstCoin = Coin(id: "001", code: "PE", country: "Perú", name: "Soles", usdBuy: 3.35, usdSale: 3.24)
+    private var firstCoin = Coin(id: "001", code: "PE", country: "Perú", name: "Soles", usdBuy: 3.35, usdSale: 3.35)
     private var secondCoin = Coin(id: "002", code: "USD", country: "Estados Unidos", name: "Dólares", usdBuy: 1.00, usdSale: 1.00)
     
     @State var showOneLevelIn = false

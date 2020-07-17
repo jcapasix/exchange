@@ -10,9 +10,23 @@
 		5008673624C13D0000F4771F /* ExchangeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008673524C13D0000F4771F /* ExchangeInteractor.swift */; };
 		5008673924C13F7400F4771F /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5008673824C13F7400F4771F /* Data.framework */; };
 		5008673A24C13F7400F4771F /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5008673824C13F7400F4771F /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5008674824C1834C00F4771F /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008674724C1834C00F4771F /* DomainTests.swift */; };
+		5008674A24C1834C00F4771F /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50754EE424C034E10072071B /* Domain.framework */; };
+		5008675024C184C200F4771F /* ExchangeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008673524C13D0000F4771F /* ExchangeInteractor.swift */; };
+		5008675124C184D000F4771F /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50754F1524C09CE20072071B /* Coin.swift */; };
 		50754EE924C034E10072071B /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 50754EE724C034E10072071B /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50754F1624C09CE20072071B /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50754F1524C09CE20072071B /* Coin.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5008674B24C1834C00F4771F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50754EDB24C034E10072071B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50754EE324C034E10072071B;
+			remoteInfo = Domain;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5008673B24C13F7400F4771F /* Embed Frameworks */ = {
@@ -31,6 +45,9 @@
 /* Begin PBXFileReference section */
 		5008673524C13D0000F4771F /* ExchangeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInteractor.swift; sourceTree = "<group>"; };
 		5008673824C13F7400F4771F /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5008674524C1834C00F4771F /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5008674724C1834C00F4771F /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
+		5008674924C1834C00F4771F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50754EE424C034E10072071B /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50754EE724C034E10072071B /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		50754EE824C034E10072071B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,6 +55,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5008674224C1834C00F4771F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5008674A24C1834C00F4771F /* Domain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50754EE124C034E10072071B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,10 +90,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5008674624C1834C00F4771F /* DomainTests */ = {
+			isa = PBXGroup;
+			children = (
+				5008674724C1834C00F4771F /* DomainTests.swift */,
+				5008674924C1834C00F4771F /* Info.plist */,
+			);
+			path = DomainTests;
+			sourceTree = "<group>";
+		};
 		50754EDA24C034E10072071B = {
 			isa = PBXGroup;
 			children = (
 				50754EE624C034E10072071B /* Domain */,
+				5008674624C1834C00F4771F /* DomainTests */,
 				50754EE524C034E10072071B /* Products */,
 				5008673724C13F7400F4771F /* Frameworks */,
 			);
@@ -78,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				50754EE424C034E10072071B /* Domain.framework */,
+				5008674524C1834C00F4771F /* DomainTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +151,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		5008674424C1834C00F4771F /* DomainTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5008674D24C1834C00F4771F /* Build configuration list for PBXNativeTarget "DomainTests" */;
+			buildPhases = (
+				5008674124C1834C00F4771F /* Sources */,
+				5008674224C1834C00F4771F /* Frameworks */,
+				5008674324C1834C00F4771F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5008674C24C1834C00F4771F /* PBXTargetDependency */,
+			);
+			name = DomainTests;
+			productName = DomainTests;
+			productReference = 5008674524C1834C00F4771F /* DomainTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		50754EE324C034E10072071B /* Domain */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50754EEC24C034E10072071B /* Build configuration list for PBXNativeTarget "Domain" */;
@@ -140,9 +194,13 @@
 		50754EDB24C034E10072071B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Jordan Capa";
 				TargetAttributes = {
+					5008674424C1834C00F4771F = {
+						CreatedOnToolsVersion = 11.5;
+					};
 					50754EE324C034E10072071B = {
 						CreatedOnToolsVersion = 11.5;
 						LastSwiftMigration = 1150;
@@ -163,11 +221,19 @@
 			projectRoot = "";
 			targets = (
 				50754EE324C034E10072071B /* Domain */,
+				5008674424C1834C00F4771F /* DomainTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5008674324C1834C00F4771F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50754EE224C034E10072071B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -178,6 +244,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5008674124C1834C00F4771F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5008675124C184D000F4771F /* Coin.swift in Sources */,
+				5008674824C1834C00F4771F /* DomainTests.swift in Sources */,
+				5008675024C184C200F4771F /* ExchangeInteractor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50754EE024C034E10072071B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -189,7 +265,53 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5008674C24C1834C00F4771F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50754EE324C034E10072071B /* Domain */;
+			targetProxy = 5008674B24C1834C00F4771F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		5008674E24C1834C00F4771F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QVC6Q8WBF8;
+				INFOPLIST_FILE = DomainTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jcapasix.DomainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5008674F24C1834C00F4771F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QVC6Q8WBF8;
+				INFOPLIST_FILE = DomainTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jcapasix.DomainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		50754EEA24C034E10072071B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -366,6 +488,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5008674D24C1834C00F4771F /* Build configuration list for PBXNativeTarget "DomainTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5008674E24C1834C00F4771F /* Debug */,
+				5008674F24C1834C00F4771F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		50754EDE24C034E10072071B /* Build configuration list for PBXProject "Domain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
