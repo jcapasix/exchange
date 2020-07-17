@@ -10,12 +10,10 @@ import SwiftUI
 import Domain
 
 struct CoinsView: View {
+    
+    @ObservedObject var viewModel: CoinsViewModel
     @Binding var showModal: Bool
     @Binding var coin:Coin
-    
-    fileprivate func extractedFunc() -> Text {
-        return Text("Hola")
-    }
     
     var body: some View {
         ZStack {
@@ -24,37 +22,48 @@ struct CoinsView: View {
                 Image("icon_bcp")
                     .resizable()
                     .frame(maxWidth: 180, maxHeight: 65, alignment: .center)
-                    .padding(.top, 20)
-                List{
-                    Button(action: {
-                        self.coin = Coin(id: "003", code: "JAP", country: "Japon", name: "Yenes", usdBuy: 1.35, usdSale: 2.24)
-                        self.showModal = false
-                    }) {
-                        CountryView(coin: Coin(id: "003", code: "JAP", country: "Japon", name: "Yenes", usdBuy: 2.35, usdSale: 2.24))
-                    }
-                    
+                    .padding(.top, 10)
+                Spacer()
+                if self.viewModel.isLoading {
+                    ActivityIndicatorOverlay()
+                } else {
+                    List(viewModel.dataSource) { rowViewModel in
+                        Button(action: {
+                            self.coin = rowViewModel
+                            self.showModal = false
+                        }) {
+                            CountryView(coin: rowViewModel)
+                        }
+                    }.animation(.interactiveSpring())
                 }
+                
+                
+                Spacer()
             }
             .frame(maxHeight: .infinity)
-        }
+        }.onAppear(perform: self.viewModel.fetchCoins)
     }
-    
 }
+
 
 struct CountryView: View {
     var coin:Coin
     var body: some View {
         HStack(spacing: 0){
-            Image("icon_japan")
+            Image(coin.code)
+                .resizable()
+                .frame(maxWidth: 70, maxHeight: 70)
             VStack(spacing: 4){
-                Text(coin.name)
-                    .font(.system(size: 11))
+                Text(coin.country)
+                    .font(.system(size: 14, weight: .bold))
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Text(coin.name)
+                Text("1 USD = \(coin.usdBuy)")
                 .font(.system(size: 11))
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
+            .padding(.horizontal, 30)
         }
+        .padding(.horizontal, 30)
     }
 }
 

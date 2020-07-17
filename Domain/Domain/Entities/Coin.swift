@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import Data
 
 public struct Coin: Equatable, Identifiable {
     public var id: String
-    public let code: String
-    public let country: String
-    public let name: String
+    public var code: String
+    public var country: String
+    public var name: String
     public var value: String = ""
     public var usdBuy: Double
     public var usdSale: Double
@@ -26,3 +27,9 @@ public struct Coin: Equatable, Identifiable {
         self.usdSale = usdSale
     }
 }
+extension Coin{
+    init(item: CoinEntity) {
+        self.init(id: item.id, code: item.code, country: item.country, name: item.name, usdBuy: item.usdBuy, usdSale: item.usdSale)
+    }
+}
+

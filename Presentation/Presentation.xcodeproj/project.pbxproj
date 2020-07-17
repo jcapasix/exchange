@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5008673324C1382100F4771F /* CommonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008673224C1382100F4771F /* CommonViews.swift */; };
 		50754EB624C0336F0072071B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50754E5424C031020072071B /* AppDelegate.swift */; };
 		50754EB724C0336F0072071B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50754E5624C031020072071B /* SceneDelegate.swift */; };
 		50754EB824C0336F0072071B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50754E5824C031020072071B /* ContentView.swift */; };
@@ -38,6 +39,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5008672F24C123B900F4771F /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5008673224C1382100F4771F /* CommonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViews.swift; sourceTree = "<group>"; };
 		50754E5424C031020072071B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50754E5624C031020072071B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		50754E5824C031020072071B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +151,7 @@
 		50754F1724C09DFA0072071B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5008672F24C123B900F4771F /* Data.framework */,
 				50754F1824C09DFA0072071B /* Domain.framework */,
 			);
 			name = Frameworks;
@@ -156,6 +160,7 @@
 		50754F1C24C0C92A0072071B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5008673224C1382100F4771F /* CommonViews.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50754F0B24C03AEE0072071B /* SplashViewModel.swift in Sources */,
+				5008673324C1382100F4771F /* CommonViews.swift in Sources */,
 				50754F1324C03B2B0072071B /* CoinsViewModel.swift in Sources */,
 				50754F1124C03B1E0072071B /* CoinsView.swift in Sources */,
 				50754EB624C0336F0072071B /* AppDelegate.swift in Sources */,
@@ -383,7 +389,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcapasix.exchange;
 				PRODUCT_NAME = Exchange;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -403,7 +409,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcapasix.exchange;
 				PRODUCT_NAME = Exchange;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

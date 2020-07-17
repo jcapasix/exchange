@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5008671E24C11C8C00F4771F /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008671D24C11C8C00F4771F /* Parser.swift */; };
+		5008672924C11E9100F4771F /* CoinEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008672824C11E9100F4771F /* CoinEntity.swift */; };
+		5008672E24C1215E00F4771F /* CoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008672D24C1215E00F4771F /* CoinResponse.swift */; };
+		5008673E24C1408D00F4771F /* ExchangeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008673D24C1408D00F4771F /* ExchangeRepository.swift */; };
+		5008674024C1537300F4771F /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008673F24C1537300F4771F /* ServiceManager.swift */; };
 		50754EFE24C034FB0072071B /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 50754EFC24C034FB0072071B /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5008671D24C11C8C00F4771F /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		5008672824C11E9100F4771F /* CoinEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinEntity.swift; sourceTree = "<group>"; };
+		5008672D24C1215E00F4771F /* CoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinResponse.swift; sourceTree = "<group>"; };
+		5008673D24C1408D00F4771F /* ExchangeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRepository.swift; sourceTree = "<group>"; };
+		5008673F24C1537300F4771F /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		50754EF924C034FB0072071B /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50754EFC24C034FB0072071B /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		50754EFD24C034FB0072071B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -30,8 +40,34 @@
 		500866FC24C0EB0100F4771F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				5008671D24C11C8C00F4771F /* Parser.swift */,
+				5008673F24C1537300F4771F /* ServiceManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		5008672524C11E2B00F4771F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5008672824C11E9100F4771F /* CoinEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		5008672A24C11EBA00F4771F /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				5008672D24C1215E00F4771F /* CoinResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		5008673C24C1407D00F4771F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				5008673D24C1408D00F4771F /* ExchangeRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		50754EEF24C034FB0072071B = {
@@ -53,6 +89,9 @@
 		50754EFB24C034FB0072071B /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5008673C24C1407D00F4771F /* Repository */,
+				5008672A24C11EBA00F4771F /* Responses */,
+				5008672524C11E2B00F4771F /* Entities */,
 				500866FC24C0EB0100F4771F /* Networking */,
 				50754EFC24C034FB0072071B /* Data.h */,
 				50754EFD24C034FB0072071B /* Info.plist */,
@@ -103,6 +142,7 @@
 				TargetAttributes = {
 					50754EF824C034FB0072071B = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -139,6 +179,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5008673E24C1408D00F4771F /* ExchangeRepository.swift in Sources */,
+				5008672924C11E9100F4771F /* CoinEntity.swift in Sources */,
+				5008671E24C11C8C00F4771F /* Parser.swift in Sources */,
+				5008672E24C1215E00F4771F /* CoinResponse.swift in Sources */,
+				5008674024C1537300F4771F /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +313,7 @@
 		50754F0224C034FB0072071B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = QVC6Q8WBF8;
@@ -285,6 +331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcapasix.Data;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -293,6 +340,7 @@
 		50754F0324C034FB0072071B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = QVC6Q8WBF8;

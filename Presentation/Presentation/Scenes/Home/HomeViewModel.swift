@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import Combine
+import Domain
+
+class HomeViewModel: ObservableObject, Identifiable {
+
+    @Published var isLoading: Bool = true
+    @Published var value: Double = 0.0
+    
+    private var interactor = ExchangeInteractor()
+
+    init(scheduler: DispatchQueue = DispatchQueue(label: "CoinsViewModel")) {}
+
+    public func exchange(change: Coin, to: Coin) -> String {
+        self.interactor.exchange(change: change, to: to)
+    }
+ 
+}

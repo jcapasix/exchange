@@ -12,18 +12,12 @@ import Combine
 
 struct HomeView: View {
     
+    @ObservedObject var viewModel: HomeViewModel
     @State var firstCoin: Coin
     @State var secondCoin: Coin
     @State var coins: [MoneyView] = []
     @State var change: Bool = true
-    
-    func action(){
-        if self.change{
-            self.secondCoin.value = "\((Double(self.firstCoin.value) ?? 0.00) / 3.35)"
-            return
-        }
-        self.firstCoin.value = "\((Double(self.secondCoin.value) ?? 0.00) * 3.35)"
-    }
+    private let defaultValue = "0.00"
 
     var body: some View {
         ZStack {
@@ -39,13 +33,10 @@ struct HomeView: View {
                                 self.action()
                             }
                         }
-                        .animation(.linear(duration: 1.0))
                     }
-                    
-                    .animation(.linear(duration: 0.3))
+                    .animation(.linear(duration: 0.25))
                     .frame(maxWidth: .infinity, maxHeight: 130, alignment: .center)
                     .padding(.horizontal, 20)
-                    
                     HStack{
                         Spacer()
                         Button(action: {
@@ -53,6 +44,8 @@ struct HomeView: View {
                             self.coins[1] = self.coins[0]
                             self.coins[0] = coinTemp
                             self.change.toggle()
+                            self.secondCoin.value = ""
+                            self.firstCoin.value = ""
                         }) {
                             Image("icon_exchange")
                                 .resizable()
@@ -63,9 +56,7 @@ struct HomeView: View {
                         }
                         .padding(.trailing, 50.0)
                     }
-                    
                 }
-
                 Text("Compra: \(change ? self.firstCoin.usdBuy : self.secondCoin.usdBuy)  |  Venta: \(change ? self.firstCoin.usdSale :self.secondCoin.usdSale)")
                     .frame(maxWidth: .infinity, maxHeight: 70, alignment: .center)
                 
@@ -88,7 +79,26 @@ struct HomeView: View {
         }
         .navigationBarBackButtonHidden(true)
     }
+
     
+    func action(){
+        if self.change{
+            if !self.secondCoin.value.isEmpty{
+                self.secondCoin.value = viewModel.exchange(change: self.firstCoin, to: self.secondCoin)
+                return
+            }
+            self.secondCoin.value = defaultValue
+            return
+        }
+        else{
+            if !self.firstCoin.value.isEmpty{
+                self.firstCoin.value = viewModel.exchange(change: self.secondCoin, to: self.firstCoin)
+                return
+            }
+            self.firstCoin.value = defaultValue
+            return
+        }
+    }
 }
 
 
@@ -105,9 +115,6 @@ struct MoneyView: View, Identifiable {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 TextField("0.00", text: self.$coin.value)
                     .keyboardType(.decimalPad)
-                    .onReceive(Just(self.$coin.value)) { newValue in
-                        print(newValue)
-                    }
             }
             .padding(.horizontal, 10)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
@@ -116,11 +123,12 @@ struct MoneyView: View, Identifiable {
                 .frame(maxWidth: 100, maxHeight: .infinity, alignment: .center)
                 .foregroundColor(Color.white)
                 .background(Color.black)
+                .animation(.linear(duration: 0.3))
                 .onLongPressGesture(minimumDuration: 1) {
                     self.showModal.toggle()
                 }
                 .sheet(isPresented: $showModal) {
-                    CoinsView(showModal: self.$showModal, coin: self.$coin)
+                    CoinsView(viewModel: CoinsViewModel(), showModal: self.$showModal, coin: self.$coin)
                 }
         }
         .border(Color.gray, width: 2)

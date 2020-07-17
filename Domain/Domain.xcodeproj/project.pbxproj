@@ -7,11 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5008673624C13D0000F4771F /* ExchangeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008673524C13D0000F4771F /* ExchangeInteractor.swift */; };
+		5008673924C13F7400F4771F /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5008673824C13F7400F4771F /* Data.framework */; };
+		5008673A24C13F7400F4771F /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5008673824C13F7400F4771F /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50754EE924C034E10072071B /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 50754EE724C034E10072071B /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50754F1624C09CE20072071B /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50754F1524C09CE20072071B /* Coin.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5008673B24C13F7400F4771F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5008673A24C13F7400F4771F /* Data.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5008673524C13D0000F4771F /* ExchangeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInteractor.swift; sourceTree = "<group>"; };
+		5008673824C13F7400F4771F /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50754EE424C034E10072071B /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50754EE724C034E10072071B /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		50754EE824C034E10072071B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -23,17 +42,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5008673924C13F7400F4771F /* Data.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5008673424C13CA300F4771F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				5008673524C13D0000F4771F /* ExchangeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5008673724C13F7400F4771F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5008673824C13F7400F4771F /* Data.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		50754EDA24C034E10072071B = {
 			isa = PBXGroup;
 			children = (
 				50754EE624C034E10072071B /* Domain */,
 				50754EE524C034E10072071B /* Products */,
+				5008673724C13F7400F4771F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,6 +85,7 @@
 		50754EE624C034E10072071B /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				5008673424C13CA300F4771F /* Interactor */,
 				50754F1424C09CD30072071B /* Entities */,
 				50754EE724C034E10072071B /* Domain.h */,
 				50754EE824C034E10072071B /* Info.plist */,
@@ -85,6 +123,7 @@
 				50754EE024C034E10072071B /* Sources */,
 				50754EE124C034E10072071B /* Frameworks */,
 				50754EE224C034E10072071B /* Resources */,
+				5008673B24C13F7400F4771F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50754F1624C09CE20072071B /* Coin.swift in Sources */,
+				5008673624C13D0000F4771F /* ExchangeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import Combine
+import Domain
+
+class SplashViewModel: ObservableObject, Identifiable {
+
+    @Published var isLoading: Bool = true
+    private var interactor = ExchangeInteractor()
+    
+    init(){}
+}
+
